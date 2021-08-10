@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My check List</title>
+<style>
+    body  {
+  background-image:url("pic2.jpg");
+}
+    h2 {
+        text-align: center;
+        font-family:Helvetica;
+        padding: 5px 15px;
+       
+        }
+form {
+    border: 3px solid #f1f1f1;
+    margin: 60px 400px;
+    }
+
+input[type=text], input[type=password] {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0px;
+  display: inline;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #5f2cbd;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  width: 30%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+  font-size: large;
+  
+}
+.btn{
+    text-align: center;
+}
+</style>
+</head>
+<body>
+
+<h2>Login Form</h2>
+
+<form action="todo.html" method="post">
+  <div class="imgcontainer">
+
+    <img src="user.png" alt="write" width="30" height="300" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+  </div>   
+  <div class="btn"> 
+    <button type="submit" id="myBtn" onClick="myFunction()" ><b>Login<b></button>
+    </div>
+  
+</form>
+<script>
+  function myFunction() {
+    window.location.href="todo.html";
+  }
+</script>
+
+</body>
+</html>
+
+
+
+

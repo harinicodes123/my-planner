@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=shadow-multiple">
+    <style>
+body{
+  background-image:url("pic5.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  
+  
+}     
+  
+h1{
+    text-align: center;
+    margin: 50px 50px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 400%;
+}
+#myinput{
+  width: 70%;
+  padding: 12px 20px;
+  margin: 8px 0px;
+  display: inline;
+  border: none;
+  box-sizing: border-box;
+}
+.mylist{
+border: 1px solid rgb(194, 186, 186);
+padding:3px 50px 150px 50px;
+margin: 100px 500px;
+text-align: center;
+font-size: 150%;
+font-family: "Sofia", sans-serif;
+}
+
+
+#addbtn{
+       border-radius: 10px;
+       
+       color:white;
+       background-color:green;
+       padding:12px 20px;
+       text-align: center;
+       cursor: pointer;
+      
+      
+      
+
+}
+
+ul {
+  display: table;
+  margin: 0 auto;
+  text-align: center;
+  color:rgb(11, 10, 48)
+  
+}
+ul li.checked {
+  background: none;
+  color:black;
+  text-decoration: line-through;
+  text-decoration-color: rgb(252, 0, 0);
+  
+}
+
+#button1 {
+  background-color: #ec2d27;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  width: 30%;
+} 
+
+.navbar {
+  overflow: hidden;
+  background-color: rgb(31, 26, 25);
+  
+}
+
+.navbar a {
+  background-color: #f73e06;
+  border-radius: 7px;
+  margin: 2px;
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  
+
+  
+
+} 
+
+
+.navbar a:hover {
+  background-color:#1ec72c;
+  color: black;
+}
+
+
+
+
+
+
+        </style>
+        </head>
+<body>
+  <div class="navbar">
+    <a href="main.html" onclick="logout()"><b>Logout</b></a>
+  
+  
+  </div>
+
+<h1 id="heading" class="font-effect-shadow-multiple">My Daily Planner</h1>
+<div class="mylist">
+    <form>
+<label for="todo"><b>Stuffs to do...</b></label><br>
+<input type="text" id="myinput" placeholder="enter your To-Dos" name="todo" required>
+<button id="addbtn" onclick="add()"><b>Add</b></button>
+</form>
+<ul id="myul" style="list-style: none">
+
+</ul>
+
+<button id="button1"><b>Clear All<b></button>
+  <p id='line'></p>
+</div>
+
+  
+
+
+<script>
+ 
+   var form = document.querySelector('form');
+    var todoList = document.querySelector('ul');
+    var clearbutton = document.getElementById('button1');
+    var logoutbutton = document.getElementById('button2');
+    var input = document.getElementById('myinput');
+    var addtodo= document.getElementById("addbtn");
+    
+    addtodo.addEventListener('click', function(e) {
+      e.preventDefault();
+if(input.value!=""){
+var output=input.value;
+var mytext=document.createElement("li");
+mytext.textContent=output;
+todoList.appendChild(mytext);
+
+mytext.addEventListener('click',function(e){
+  e.preventDefault();
+  var check=e.target.classList.toggle('checked');
+ 
+});
+   
+input.value='';
+}
+else{
+alert("Cannot add empty");
+}
+
+    });
+
+
+ 
+
+    // var form = document.querySelector('form');
+    // var todoList = document.querySelector('ul');
+    // var clearbutton = document.getElementById('button1');
+    // var logoutbutton = document.getElementById('button2');
+    // var input = document.getElementById('myinput');
+    // var addtodo= document.getElementById("addbtn");
+    // addtodo.addEventListener('submit', function(e) {
+    //   e.preventDefault();
+    //  if(input.value!=""){
+    //    var myli=document.createElement("li");
+    //    myli.textContent=input.value;
+    //    todolist.appendChild(myli);
+    //  }
+
+
+
+
+    // });
+    // addtodo.addEventListener('submit', function(e) {
+    //   e.preventDefault();
+    //   todoMaker(input.value);
+    //   input.value = '';
+    // });
+    // var todoMaker = function(text) {
+    //   var todo = document.createElement('li');
+    //   todo.textContent = text;
+    //   todoList.appendChild(todo);
+    // }
+    clearbutton.addEventListener('click', function() {
+      while (todoList.firstChild) {
+        todoList.removeChild(todoList.firstChild);
+      }
+    });
+   function logout(){
+       window.location.href="main.html";
+   }
+
+
+    </script>
+</body>
+</html>
